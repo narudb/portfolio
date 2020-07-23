@@ -10,4 +10,8 @@ export default {
     bold: '',
     medium: '',
   },
+  logo: {
+    github: '/img/github.png',
+    linkedin: '/img/linkedin.png',
+  },
 };

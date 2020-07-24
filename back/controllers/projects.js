@@ -3,7 +3,7 @@ const express = require('express');
 
 const getAllProjects = async (req, res) => {
   try {
-    let sqlRequest = `SELECT project.id AS project_id, project_title, SUBSTR(project_description, 1, 100) AS projectDescription,  project_img, client_name, technologie_name FROM project JOIN client ON client.id=project.client_id JOIN technologie ON technologie.id=technologie_id JOIN picture ON project_id = project.id`;
+    let sqlRequest = `SELECT project.id AS project_id, project_title, SUBSTR(project_description, 1, 100) AS projectDescription, project_link, project_date, project_img, client_name, technologie_name FROM project JOIN client ON client.id=project.client_id JOIN technologie ON technologie.id=technologie_id`;
 
     const [data] = await connection.query(sqlRequest, [req.body]);
     return res.status(200).send(data);

@@ -20,13 +20,13 @@ const HomeWrapper = styled.div`
   grid-template-areas:
     'navbar navbar navbar'
     '. main .';
-
-  background-color: ${(props) => props.theme.colors.bckground};
+  background-color: ${(props) => props.theme.colors.bckground2};
   font-family: ${(props) => props.theme.fonts.regular};
 `;
 
 const Main = styled.main`
   grid-area: main;
+  padding: 15px;
 `;
 
 const App = () => {

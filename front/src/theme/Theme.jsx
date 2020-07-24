@@ -14,6 +14,7 @@ export default {
     medium: '',
   },
   logo: {
+    logonav: '/img/logo-01.svg',
     github: '/img/github.png',
     linkedin: '/img/linkedin.png',
   },

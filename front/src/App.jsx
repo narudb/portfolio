@@ -20,7 +20,7 @@ const HomeWrapper = styled.div`
   grid-template-areas:
     'navbar navbar navbar'
     '. main .';
-  background-color: ${(props) => props.theme.colors.bckground2};
+  background-color: ${(props) => props.theme.colors.background2};
   font-family: ${(props) => props.theme.fonts.regular};
 `;
 

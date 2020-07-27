@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import styled from 'styled-components';
+import Form from './ui/Form';
 import { backend } from '../conf';
 
 const SignInWrapper = styled.div`
@@ -25,7 +26,7 @@ const SignIn = () => {
         type: 'LOGIN',
         payload: {
           token: data.token,
-          mail: data.user.mail,
+          mail: data.user.user_mail,
           id: data.user.id,
         },
       });
@@ -34,32 +35,32 @@ const SignIn = () => {
 
   return (
     <SignInWrapper>
-      <Title>Je me connecte</Title>
+      <h2>Connexion</h2>
       <Form
         onSubmit={(e) => {
           signIn(e);
         }}
       >
-        <Input
+        <input
           type="email"
           name="mail"
           required
-          placeholder="Ton Email"
+          placeholder="Mail"
           onChange={(e) => {
             handleChange(e);
           }}
         />
 
-        <Input
+        <input
           type="password"
           name="password"
           required
-          placeholder="Ton mot de passe"
+          placeholder="Mot de passe"
           onChange={(e) => {
             handleChange(e);
           }}
         />
-        <InputBtn type="submit" value="Je me connecte" />
+        <input type="submit" value="Connexion" />
       </Form>
     </SignInWrapper>
   );

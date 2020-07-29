@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import Form from './ui/Form';
 import axios from 'axios';
 import { backend } from '../conf';
 
@@ -66,25 +67,25 @@ const SignUp = () => {
 
   return (
     <SignUpWrapper>
-      <Title>Inscris-toi</Title>
+      <h2>Inscription</h2>
       <Form
         onSubmit={(e) => {
           handleSubmit(e);
         }}
       >
-        <Input
+        <input
           type="text"
           name="name"
           required
           onBlur={(e) => {
             handleChange(e);
           }}
-          placeholder="Ton Nom"
+          placeholder="Pseudo"
         />
         {formErrors.name.length > 0 && (
           <StyledSpan>{formErrors.name}</StyledSpan>
         )}
-        <Input
+        <input
           type="email"
           name="mail"
           required
@@ -96,7 +97,7 @@ const SignUp = () => {
         {formErrors.mail.length > 0 && (
           <StyledSpan>{formErrors.mail}</StyledSpan>
         )}
-        <Input
+        <input
           type="password"
           name="password"
           required
@@ -108,7 +109,7 @@ const SignUp = () => {
         {formErrors.password.length > 0 && (
           <StyledSpan>{formErrors.password}</StyledSpan>
         )}
-        <InputBtn type="submit" value="Je m'inscris" />
+        <input type="submit" value="Je m'inscris" />
       </Form>
     </SignUpWrapper>
   );

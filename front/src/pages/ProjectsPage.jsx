@@ -9,8 +9,8 @@ const ProjectsContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
   align-content: flex-start;
-  width: 65%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   justify-content: space-between;
   overflow-y: scroll;
 
@@ -30,7 +30,7 @@ const ProjectsContainer = styled.div`
 const ProjectWrapper = styled.div`
   width: 540px;
   height: 200px;
-  margin: 10px;
+  margin: 20px;
   border-radius: 5px;
   padding: 5px;
   background-color: ${(props) => props.theme.colors.projectCard};
@@ -60,7 +60,7 @@ const Description = styled.p`
   grid-area: txt;
 `;
 
-const Date = styled.p`
+const PDate = styled.p`
   grid-area: date;
 `;
 
@@ -72,15 +72,12 @@ const ProjectsPage = () => {
 
   useEffect(() => {
     const getAllProjects = () => {
-      axios
-        .get(`${backend}/projects`)
-        .then((response) => response.data)
-        .then((data) => {
-          dispatch({
-            type: 'GET_ALL_PROJECTS',
-            data,
-          });
+      axios.get(`${backend}/projects`).then(({ data }) => {
+        dispatch({
+          type: 'GET_ALL_PROJECTS',
+          data,
         });
+      });
     };
     getAllProjects();
   }, [dispatch]);
@@ -93,7 +90,7 @@ const ProjectsPage = () => {
             <img src={project.project_img} alt={project.project_title} />
             <Title>{project.project_title}</Title>
             <Description>{project.projectDescription}</Description>
-            <Date>{project.project_date}</Date>
+            <PDate>{project.projectDate}</PDate>
           </ProjectWrapper>
         );
       })}

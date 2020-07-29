@@ -7,7 +7,7 @@ import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
-import LoginPage from './pages/LoginPage';
+import Admin from './pages/Admin';
 
 const HomeWrapper = styled.div`
   width: 100vw;
@@ -40,7 +40,7 @@ const App = () => {
             <Route path="/projects/" component={ProjectsPage} />
             <Route path="/about/" component={AboutPage} />
             <Route path="/contact/" component={ContactPage} />
-            <Route path="/login/" component={LoginPage} />
+            <Route path="/admin/" component={Admin} />
           </Switch>
         </Main>
       </HomeWrapper>
